@@ -146,6 +146,8 @@
   </audio>
 
   <script>
+    const UNLOCK_TIME = new Date('2025-12-31T19:05:00');
+
     const wishes = [
       "Счастья!",
       "Здоровья!",
@@ -209,6 +211,12 @@
     }
 
     function startMainContent() {
+      const now = new Date();
+      if (now < UNLOCK_TIME) {
+        alert("Кудааа? Это на Новый год! В 23:55 приходи!");
+        return;
+      }
+
       const menu = document.getElementById('menu-screen');
       const main = document.getElementById('main-content');
 
